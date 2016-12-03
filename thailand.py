@@ -5,7 +5,7 @@ def function(): #hello mom
     """_"""
 
     #open_worksheet
-    book = open_workbook('D:/Thailand.xls')
+    book = open_workbook('D:/Book1.xlsx')
     sheet = book.sheet_by_index(0)
     kill_honest = [sheet.cell(3, col_index).value for col_index in range(1, 6)]
     kill_bad = [sheet.cell(4, col_index).value for col_index in range(1, 6)]
@@ -25,6 +25,6 @@ def function(): #hello mom
     line_chart.add(sheet.cell(6, 0).value, try_to_kill)
     line_chart.add(sheet.cell(7, 0).value, attrack)
     line_chart.add(sheet.cell(8, 0).value, rape)
-    line_chart.render_to_file('line_chart.svg')
+    line_chart.render_to_file('Thailand.svg')
 
 function()
