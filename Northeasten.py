@@ -1,10 +1,11 @@
 """Show Information"""
 import pygal
 from xlrd import open_workbook
+from pygal.style import BlueStyle
 def function(): #hello mom 
     """Northeasten"""
 
-    #open_worksheet
+    #open_worksheets
     book = open_workbook('D:/Book1.xlsx')
     sheet = book.sheet_by_index(2)
     kill_honest = [sheet.cell(3, col_index).value for col_index in range(1, 6)]
@@ -15,7 +16,7 @@ def function(): #hello mom
     rape = [sheet.cell(8, col_index).value for col_index in range(1, 6)]
 
     #make
-    line_chart = pygal.Bar()
+    line_chart = pygal.Bar(fill=True, interpolate='cubic', style=BlueStyle)
     line_chart.title = sheet.cell(0, 0).value
     year = ["2554", "2555", "2556", "2557", "2558"]
     line_chart.x_labels = map(str, year)
