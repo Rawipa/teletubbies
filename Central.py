@@ -3,11 +3,11 @@ import pygal #create graph
 from xlrd import open_workbook #import file from excel
 from pygal.style import BlueStyle #style of graph(color)
 def function():
-    """Northern"""
+    """Central"""
 
     #open_worksheet
     book = open_workbook('D:/Book1.xlsx') #openfile in ---> (name of file)
-    sheet = book.sheet_by_index(1) #sheet cell
+    sheet = book.sheet_by_index(3) #sheet cell
     kill_honest = [sheet.cell(3, col_index).value for col_index in range(1, 6)] #sheet.cell(row, col_index) ,,,, range(column)
     kill_bad = [sheet.cell(4, col_index).value for col_index in range(1, 6)]
     careless = [sheet.cell(5, col_index).value for col_index in range(1, 6)]
@@ -26,6 +26,6 @@ def function():
     line_chart.add(sheet.cell(6, 0).value, try_to_kill)
     line_chart.add(sheet.cell(7, 0).value, attrack)
     line_chart.add(sheet.cell(8, 0).value, rape)
-    line_chart.render_to_file('Northern.svg')
+    line_chart.render_to_file('Central.svg')
 
 function()

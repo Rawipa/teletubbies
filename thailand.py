@@ -1,14 +1,14 @@
 """Show Information"""
-import pygal
-from xlrd import open_workbook
-from pygal.style import LightSolarizedStyle
-def function(): #hello mom 
-    """_"""
+import pygal #create graph
+from xlrd import open_workbook #import file from excel
+from pygal.style import LightColorizedStyle #style of graph(color) 
+def function():
+    """Thailand"""
 
     #open_worksheet
-    book = open_workbook('D:/Book1.xlsx')
-    sheet = book.sheet_by_index(0)
-    kill_honest = [sheet.cell(3, col_index).value for col_index in range(1, 6)]
+    book = open_workbook('D:/Book1.xlsx') #openfile in ---> (name of file)
+    sheet = book.sheet_by_index(0) #sheet cell
+    kill_honest = [sheet.cell(3, col_index).value for col_index in range(1, 6)] #sheet.cell(row, col_index) ,,,, range(column)
     kill_bad = [sheet.cell(4, col_index).value for col_index in range(1, 6)]
     careless = [sheet.cell(5, col_index).value for col_index in range(1, 6)]
     try_to_kill = [sheet.cell(6, col_index).value for col_index in range(1, 6)]
@@ -16,7 +16,7 @@ def function(): #hello mom
     rape = [sheet.cell(8, col_index).value for col_index in range(1, 6)]
 
     #make
-    line_chart = pygal.Bar(fill=True, interpolate='cubic', style=LightSolarizedStyle)
+    line_chart = pygal.Bar(fill=True, interpolate='cubic', style=LightColorizedStyle)
     line_chart.title = sheet.cell(0, 0).value
     year = ["2554", "2555", "2556", "2557", "2558"]
     line_chart.x_labels = map(str, year)
